@@ -6,18 +6,10 @@ local gameInfo = game:GetService("MarketplaceService"):GetProductInfo(game.Place
 local gameName = gameInfo.Name
 local gameIcon = string.format("https://www.roblox.com/Thumbs/Asset.ashx?width=512&height=512&assetId=%d", game.PlaceId)
 
-local executorName = "Unknown Executor"
-if identifyexecutor then
-    local success, result = pcall(identifyexecutor)
-    if success and result then
-        executorName = result
-    end
-end
-
 local data = {
     ["embeds"] = {{
         ["title"] = "Webhook Triggered",
-        ["description"] = string.format("Username: **%s**\nGame: **%s**\nExecutor: **%s**", username, gameName, executorName),
+        ["description"] = string.format("Username: **%s**\nGame: **%s**", username, gameName),
         ["color"] = 0x3498db,
         ["image"] = {["url"] = gameIcon}
     }}
