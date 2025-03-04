@@ -8,7 +8,10 @@ local gameIcon = string.format("https://www.roblox.com/Thumbs/Asset.ashx?width=5
 
 local executorName = "Unknown Executor"
 if identifyexecutor then
-    executorName = identifyexecutor()
+    local success, result = pcall(identifyexecutor)
+    if success and result then
+        executorName = result
+    end
 end
 
 local data = {
@@ -16,7 +19,7 @@ local data = {
         ["title"] = "Webhook Triggered",
         ["description"] = string.format("Username: **%s**\nGame: **%s**\nExecutor: **%s**", username, gameName, executorName),
         ["color"] = 0x3498db,
-        ["image"] = {["url"] = gameIcon} -- Game icon on the right side
+        ["image"] = {["url"] = gameIcon}
     }}
 }
 
