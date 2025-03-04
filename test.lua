@@ -2,7 +2,8 @@ local webhookURL = "https://discord.com/api/webhooks/1346416926246830125/pg2nsLO
 
 local player = game:GetService("Players").LocalPlayer
 local username = player.Name
-local gameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+local gameInfo = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId)
+local gameName = gameInfo.Name
 local gameIcon = string.format("https://www.roblox.com/Thumbs/Asset.ashx?width=512&height=512&assetId=%d", game.PlaceId)
 
 local data = {
@@ -10,7 +11,7 @@ local data = {
         ["title"] = "Webhook Triggered",
         ["description"] = string.format("Username: **%s**\nGame: **%s**", username, gameName),
         ["color"] = 0x3498db,
-        ["thumbnail"] = {["url"] = gameIcon}
+        ["image"] = {["url"] = gameIcon}
     }}
 }
 
