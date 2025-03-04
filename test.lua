@@ -16,7 +16,7 @@ local data = {
         ["title"] = "Webhook Triggered",
         ["description"] = string.format("Username: **%s**\nGame: **%s**\nExecutor: **%s**", username, gameName, executorName),
         ["color"] = 0x3498db,
-        ["image"] = {["url"] = gameIcon}
+        ["image"] = {["url"] = gameIcon} -- Game icon on the right side
     }}
 }
 
